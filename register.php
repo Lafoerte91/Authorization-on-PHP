@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -24,6 +27,12 @@
   <p>
   У вас уже есть аккаунт? - <a href="./index.php">Авторизуйтесь</a>
 </p>
+<?php 
+if(!empty($_SESSION["message"])) {
+  echo '<p class="msg">' . $_SESSION["message"] . "</p>";
+}
+unset($_SESSION["message"]);
+?>
 </form>
   
 </body>
