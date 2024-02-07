@@ -50,3 +50,7 @@ button {
   text-align: center;
   font-weight: bold;
 }
+
+.logout {
+  color: #b7625c;
+}

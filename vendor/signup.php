@@ -15,6 +15,7 @@ if($password == $password_confirm) {
     $_SESSION["message"] = "Ошибка при загрузке файла";
     header("Location: ../register.php");
   }
+  $password = md5($password);
   mysqli_query($connect, "insert into users(id, full_name, login, email, password, avatar) values(null, '$full_name', '$login', '$email', '$password', '$path')");
   $_SESSION["message"] = "Регистрация прошла успешно!";
   header("Location: ../index.php");

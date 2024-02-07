@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(!empty($_SESSION['user'])) {
+  header("Location: ./profile.php");
+}
 ?>
 <html lang="ru">
 <head>
@@ -23,16 +26,10 @@ session_start();
   <input type="password" name="password" placeholder="Введите пароль">
   <label>Подтверждение пароля</label>
   <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
-  <button>Войти</button>
+  <button type="submit">Зарегистрироваться</button>
   <p>
   У вас уже есть аккаунт? - <a href="./index.php">Авторизуйтесь</a>
 </p>
-<?php 
-if(!empty($_SESSION["message"])) {
-  echo '<p class="msg">' . $_SESSION["message"] . "</p>";
-}
-unset($_SESSION["message"]);
-?>
 </form>
   
 </body>
